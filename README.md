@@ -18,6 +18,9 @@
 
 3. 使用很简单 —— 输入线宽、起点、迭代次数、最大宽度并选择模式，即可自动生成希尔伯特曲线，生成完成后可自动计算电阻值
 
+![image](https://github.com/user-attachments/assets/f3017520-689f-4643-943d-82d2b16a05ae)
+
+
 ## 开源许可
 
 <a href="https://choosealicense.com/licenses/unlicense/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/klxf/eext-hilbert-creator" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
