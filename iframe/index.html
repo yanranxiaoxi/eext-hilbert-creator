@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hans">
+	<head>
+		<title>希尔伯特曲线绘制</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="/iframe/css/style.css" rel="stylesheet" />
+		<script src="/iframe/js/main.js"></script>
+	</head>
+	<body>
+		<div>
+			<!--<label for="net-name">网络名称：</label>
+		<input type="text" id="net-name" name="net-name" value="test" />-->
+
+			<label for="lineWidth">线宽（mm）：</label>
+			<input type="number" id="lineWidth" name="lineWidth" value="0.254" min="0" step="0.001" />
+
+			<label for="startX">起始点X坐标：</label>
+			<input type="number" id="startX" name="startX" value="0" />
+
+			<label for="startY">起始点Y坐标：</label>
+			<input type="number" id="startY" name="startY" value="0" />
+
+			<label for="iterations">迭代次数：</label>
+			<input type="number" id="iterations" name="iterations" value="5" min="1" />
+
+			<label for="height">宽度（mm）：</label>
+			<input type="number" id="height" name="height" value="20" />
+
+			<label for="mode"
+				>模式：<span id="mode-tip-icon"><img src="/iframe/img/mode0.webp" id="mode-tip-img" alt="例子" /></span
+			></label>
+			<select id="mode" name="mode">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+
+			<button id="draw">绘制</button>
+			<button id="calc">计算</button>
+		</div>
+		<script>
+			document.getElementById('draw').addEventListener('click', function () {
+				// const netName = document.getElementById('net-name').value;
+				const lineWidth = document.getElementById('lineWidth').value;
+				const startX = document.getElementById('startX').value;
+				const startY = document.getElementById('startY').value;
+				const iterations = document.getElementById('iterations').value;
+				const height = document.getElementById('height').value;
+				const mode = document.getElementById('mode').value;
+
+				drawHilbertCurve(lineWidth, startX, startY, iterations, height, mode)
+					.then(() => {
+						eda.sys_ToastMessage.showMessage('绘制完成', 'success');
+					})
+					.catch((error) => {
+						eda.sys_ToastMessage.showMessage('绘制失败：' + error, 'error');
+					});
+			});
+
+			document.getElementById('calc').addEventListener('click', function () {
+				const lineWidth = document.getElementById('lineWidth').value;
+				console.log('lineWidth:', lineWidth); // 调试信息
+
+				calcResistance(lineWidth)
+					.then((resistance) => {
+						console.log('resistance:', resistance); // 调试信息
+						eda.sys_ToastMessage.showMessage('计算完成，电阻值为：' + resistance, 'success');
+					})
+					.catch((error) => {
+						console.error('error:', error); // 调试信息
+						eda.sys_ToastMessage.showMessage('计算失败：' + error, 'error');
+					});
+			});
+
+			document.getElementById('mode').addEventListener('change', function () {
+				const mode = document.getElementById('mode').value;
+				document.getElementById('mode-tip-img').src = '/iframe/img/mode' + mode + '.webp';
+			});
+		</script>
+	</body>
+</html>

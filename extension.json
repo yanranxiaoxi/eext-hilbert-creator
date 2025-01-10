@@ -1,0 +1,41 @@
+{
+	"name": "eext-hilbert-creator",
+	"uuid": "9cc258d2dded489c852ced6a70113396",
+	"displayName": "Hilbert Creator",
+	"description": "Hilbert Creator",
+	"version": "1.0.0",
+	"engines": {
+		"publisher": "Mr_Fang <klxf@vip.qq.com>",
+		"eda": "^2.2.35"
+	},
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "extension-store",
+		"url": ""
+	},
+	"categories": "Other",
+	"keywords": [],
+	"images": {
+		"logo": "./images/logo.png"
+	},
+	"homepage": "https://github.com/klxf/eext-hilbert-creator",
+	"bugs": "https://github.com/klxf/eext-hilbert-creator/issues",
+	"activationEvents": {},
+	"entry": "./dist/index",
+	"dependentExtensions": {},
+	"headerMenus": {
+		"pcb": [
+			{
+				"id": "pcb-hilbert",
+				"title": "希尔伯特",
+				"menuItems": [
+					{
+						"id": "pcb-hilbert-iframe",
+						"title": "开启",
+						"registerFn": "openIframe"
+					}
+				]
+			}
+		]
+	}
+}
