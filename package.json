@@ -1,9 +1,9 @@
 {
 	"name": "eext-hilbert-creator",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "希尔伯特曲线生成",
 	"author": "Mr_Fang <klxf@vip.qq.com>",
-	"license": "Apache-2.0",
+	"license": "The Unlicense",
 	"homepage": "https://github.com/klxf/eext-hilbert-creator",
 	"scripts": {
 		"compile": "rimraf ./dist/ && ts-node ./config/esbuild.prod.ts",
@@ -14,7 +14,7 @@
 		"build": "npm run compile && ts-node ./build/packaged.ts"
 	},
 	"devDependencies": {
-		"@jlceda/pro-api-types": "^0.1.101",
+		"@jlceda/pro-api-types": "^0.1.111",
 		"@microsoft/tsdoc": "^0.15.0",
 		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"@types/fs-extra": "^11.0.4",

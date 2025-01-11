@@ -8,7 +8,7 @@
 		"publisher": "Mr_Fang <klxf@vip.qq.com>",
 		"eda": "^2.2.35"
 	},
-	"license": "Apache-2.0",
+	"license": "The Unlicense",
 	"repository": {
 		"type": "extension-store",
 		"url": ""
