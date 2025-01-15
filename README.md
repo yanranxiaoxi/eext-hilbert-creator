@@ -20,6 +20,8 @@
 
 ![image](https://github.com/user-attachments/assets/f3017520-689f-4643-943d-82d2b16a05ae)
 
+## 文言脚本
+适用于 [吾有一术](https://github.com/klxf/eext-wenyan) 拓展的文言脚本：[绘希氏图](https://github.com/klxf/eext-hilbert-creator/blob/master/src/%E7%B9%AA%E5%B8%8C%E6%B0%8F%E5%9C%96.wy)
 
 ## 开源许可
 
