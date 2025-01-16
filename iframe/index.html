@@ -39,6 +39,8 @@
 
 			<button id="draw">绘制</button>
 			<button id="calc">计算</button>
+			<button id="stop" class="btn-danger hidden">终止</button>
+			<button id="clear" class="btn-danger hidden">清空</button>
 		</div>
 		<script>
 			document.getElementById('draw').addEventListener('click', function () {
@@ -50,12 +52,17 @@
 				const height = document.getElementById('height').value;
 				const mode = document.getElementById('mode').value;
 
+				document.getElementById('stop').classList.remove('hidden');
+				document.getElementById('clear').classList.add('hidden');
+
 				drawHilbertCurve(lineWidth, startX, startY, iterations, height, mode)
 					.then(() => {
-						eda.sys_ToastMessage.showMessage('绘制完成', 'success');
+						eda.sys_Message.showToastMessage('绘制完成', 'success');
+						document.getElementById('stop').classList.add('hidden');
+						document.getElementById('clear').classList.remove('hidden');
 					})
 					.catch((error) => {
-						eda.sys_ToastMessage.showMessage('绘制失败：' + error, 'error');
+						eda.sys_Message.showToastMessage('绘制失败：' + error, 'error');
 					});
 			});
 
@@ -66,17 +73,28 @@
 				calcResistance(lineWidth)
 					.then((resistance) => {
 						console.log('resistance:', resistance); // 调试信息
-						eda.sys_ToastMessage.showMessage('计算完成，电阻值为：' + resistance, 'success');
+						eda.sys_Message.showToastMessage('计算完成，电阻值为：' + resistance, 'success');
 					})
 					.catch((error) => {
 						console.error('error:', error); // 调试信息
-						eda.sys_ToastMessage.showMessage('计算失败：' + error, 'error');
+						eda.sys_Message.showToastMessage('计算失败：' + error, 'error');
 					});
 			});
 
 			document.getElementById('mode').addEventListener('change', function () {
 				const mode = document.getElementById('mode').value;
 				document.getElementById('mode-tip-img').src = '/iframe/img/mode' + mode + '.webp';
+			});
+
+			document.getElementById('stop').addEventListener('click', function () {
+				stopDrawing();
+				document.getElementById('stop').classList.add('hidden');
+			});
+
+			document.getElementById('clear').addEventListener('click', function () {
+				// 似乎是 bug，无法删除绘制的线
+				eda.sys_Message.showToastMessage('清空功能暂未实现，请手动删除', 'error');
+				document.getElementById('clear').classList.add('hidden');
 			});
 		</script>
 	</body>

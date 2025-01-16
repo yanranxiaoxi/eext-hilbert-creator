@@ -1,6 +1,6 @@
 {
 	"name": "eext-hilbert-creator",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "希尔伯特曲线生成",
 	"author": "Mr_Fang <klxf@vip.qq.com>",
 	"license": "The Unlicense",
@@ -14,7 +14,7 @@
 		"build": "npm run compile && ts-node ./build/packaged.ts"
 	},
 	"devDependencies": {
-		"@jlceda/pro-api-types": "^0.1.111",
+		"@jlceda/pro-api-types": "^0.1.112",
 		"@microsoft/tsdoc": "^0.15.0",
 		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"@types/fs-extra": "^11.0.4",
