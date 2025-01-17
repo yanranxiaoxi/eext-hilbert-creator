@@ -9,8 +9,11 @@ async function drawHilbertCurve(lineWidth, startX, startY, iterations, height, m
 	const net = 'Hilbert';
 	const h = eda.sys_Unit.mmToMil(height) / Math.pow(2, iterations);
 
-	let x = eda.sys_Unit.mmToMil(startX);
-	let y = eda.sys_Unit.mmToMil(startY);
+	// 获取数据原点与画布原点的偏移量
+	const offset = await eda.pcb_Document.getCanvasOrigin();
+
+	let x = offset['offsetX'] + eda.sys_Unit.mmToMil(startX);
+	let y = offset['offsetY'] + eda.sys_Unit.mmToMil(startY);
 
 	// 临时解决方案，2.2.35.4 已修复，正式发布后恢复
 	lineWidth = eda.sys_Unit.mmToMil(lineWidth) / 10;
