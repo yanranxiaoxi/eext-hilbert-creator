@@ -6,7 +6,7 @@ function stopDrawing() {
 
 async function drawHilbertCurve(lineWidth, startX, startY, iterations, height, mode) {
 	const layer = 1;
-	const net = 'Hilbert';
+	const net = 'HILBERT';
 	const h = eda.sys_Unit.mmToMil(height) / Math.pow(2, iterations);
 
 	// 获取数据原点与画布原点的偏移量
@@ -117,7 +117,7 @@ async function calcResistance(lineWidth) {
 	const D = 0.035;
 
 	try {
-		const length = await eda.pcb_Net.getNetLength('Hilbert');
+		const length = await eda.pcb_Net.getNetLength('HILBERT');
 		const R = (r * eda.sys_Unit.milToMm(length)) / (1000 * W * D);
 		console.log('Resistance: ', R);
 		return R;
