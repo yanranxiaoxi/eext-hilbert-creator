@@ -15,8 +15,8 @@ async function drawHilbertCurve(lineWidth, startX, startY, iterations, height, m
 	let x = offset['offsetX'] + eda.sys_Unit.mmToMil(startX);
 	let y = offset['offsetY'] + eda.sys_Unit.mmToMil(startY);
 
-	// 临时解决方案，2.2.35.4 已修复，正式发布后恢复
-	lineWidth = eda.sys_Unit.mmToMil(lineWidth) / 10;
+	// 临时解决方案，2.2.35.4 已修复
+	// lineWidth = eda.sys_Unit.mmToMil(lineWidth) / 10;
 	mode = parseInt(mode, 10);
 
 	/* if (mode >= 2) {
@@ -118,13 +118,9 @@ async function calcResistance(lineWidth) {
 
 	try {
 		const length = await eda.pcb_Net.getNetLength('HILBERT');
-		const R = (r * eda.sys_Unit.milToMm(length)) / (1000 * W * D);
-		console.log('Resistance: ', R);
-		return R;
+		return (r * eda.sys_Unit.milToMm(length)) / (1000 * W * D);
 	} catch (error) {
 		console.error('Error calculating resistance: ', error);
 		throw error;
 	}
 }
-// 调用示例
-// drawHilbertCurve(0.254, 10, 10, 5, 50, 0);
