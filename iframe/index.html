@@ -92,12 +92,17 @@
 			});
 
 			document.getElementById('clear').addEventListener('click', function () {
-				// 似乎是 bug，无法删除绘制的线，等待修复
-				eda.sys_Message.showToastMessage('清空功能暂未实现，请手动删除', 'error');
 				document.getElementById('clear').classList.add('hidden');
-				/* eda.pcb_PrimitiveLine.getAllPrimitiveId("HILBERT").then((ids) => {
-					eda.pcb_PrimitiveLine.delete(ids);
-				}); */
+				eda.pcb_PrimitiveLine.getAllPrimitiveId('HILBERT').then((ids) => {
+					eda.pcb_PrimitiveLine
+						.delete(ids)
+						.then(() => {
+							eda.sys_Message.showToastMessage('清除完成', 'success');
+						})
+						.catch((error) => {
+							eda.sys_Message.showToastMessage('清除失败：' + error, 'error');
+						});
+				});
 			});
 		</script>
 	</body>

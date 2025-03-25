@@ -68,7 +68,7 @@ span#mode-tip-icon {
 	background-size: 100% 100%;
 	min-height: 24px;
 	min-width: 20px;
-	position: fixed;
+	position: absolute;
 	cursor: pointer;
 }
 
@@ -96,4 +96,50 @@ span#mode-tip-icon {
 
 .hidden {
 	display: none;
+}
+
+.tablinks {
+	background: white;
+	margin-left: 10px;
+	padding: 0.5em 1em;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	border-radius: 0.5em 0.5em 0 0;
+	display: inline-table;
+	box-shadow: unset;
+}
+.tablinks.active {
+	color: #007bff;
+	font-weight: bold;
+}
+
+#select-tip-icon {
+	background: transparent;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjMuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iJiN4NTZGRTsmI3g1QzQyO18xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiCgkgeT0iMHB4IiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE2IDE2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxyZWN0IHN0eWxlPSJmaWxsOm5vbmU7IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiLz4KPHBhdGggZD0iTTE1LjUsOGgtMUMxMy4xMTksOCwxMiw5LjExOSwxMiwxMC41djJjMCwwLjgyOC0wLjY3MiwxLjUtMS41LDEuNWgwQzkuNjcyLDE0LDksMTMuMzI4LDksMTIuNXYtOEM5LDMuMTE5LDcuODgxLDIsNi41LDJoMAoJQzUuMTE5LDIsNCwzLjExOSw0LDQuNXYyQzQsNy4zMjgsMy4zMjgsOCwyLjUsOGgtMUMxLjIyNCw4LDEsOC4yMjQsMSw4LjV2MEMxLDguNzc2LDEuMjI0LDksMS41LDloMUMzLjg4MSw5LDUsNy44ODEsNSw2LjV2LTIKCUM1LDMuNjcyLDUuNjcyLDMsNi41LDNoMEM3LjMyOCwzLDgsMy42NzIsOCw0LjV2OGMwLDEuMzgxLDEuMTE5LDIuNSwyLjUsMi41aDBjMS4zODEsMCwyLjUtMS4xMTksMi41LTIuNXYtMgoJQzEzLDkuNjcyLDEzLjY3Miw5LDE0LjUsOWgxQzE1Ljc3Niw5LDE2LDguNzc2LDE2LDguNXYwQzE2LDguMjI0LDE1Ljc3Niw4LDE1LjUsOHoiLz4KPC9zdmc+Cg==);
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	min-height: 24px;
+	min-width: 20px;
+	position: absolute;
+	cursor: pointer;
+}
+
+#select-tip-icon span {
+	display: none;
+	position: absolute;
+	background: #333;
+	color: white;
+	padding: 0.5em;
+	border-radius: 0.5em;
+	white-space: nowrap;
+	font-size: 0.8em;
+	top: 0;
+	left: 0;
+	transform: translate(-35%, -100%);
+}
+
+#select-tip-icon:hover span {
+	display: block;
 }

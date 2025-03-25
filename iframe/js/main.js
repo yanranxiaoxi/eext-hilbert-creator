@@ -16,7 +16,7 @@ async function drawHilbertCurve(lineWidth, startX, startY, iterations, height, m
 	let y = offset['offsetY'] + eda.sys_Unit.mmToMil(startY);
 
 	// 临时解决方案，2.2.35.4 已修复
-	// lineWidth = eda.sys_Unit.mmToMil(lineWidth) / 10;
+	lineWidth = eda.sys_Unit.mmToMil(lineWidth);
 	mode = parseInt(mode, 10);
 
 	/* if (mode >= 2) {

@@ -23,13 +23,14 @@ var edaEsbuildExportName = (() => {
   __export(src_exports, {
     about: () => about,
     activate: () => activate,
+    openCounter1Iframe: () => openCounter1Iframe,
     openIframe: () => openIframe
   });
 
   // extension.json
   var name = "eext-hilbert-creator";
   var description = "Hilbert Creator - \u5E0C\u5C14\u4F2F\u7279\u66F2\u7EBF\u751F\u6210\u5668";
-  var version = "1.2.3";
+  var version = "1.3.0";
 
   // src/index.ts
   function activate(status, arg) {
@@ -39,6 +40,9 @@ var edaEsbuildExportName = (() => {
   }
   function openIframe() {
     eda.sys_IFrame.openIFrame("/iframe/index.html", 300, 600);
+  }
+  function openCounter1Iframe() {
+    eda.sys_IFrame.openIFrame("/iframe/counter_1.html", 300, 465);
   }
   return __toCommonJS(src_exports);
 })();
