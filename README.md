@@ -17,9 +17,11 @@
 2. 在PCB页面中，点击顶部菜单的 `希尔伯特`，即可打开本拓展
 
 3. 使用很简单 —— 输入线宽、起点、迭代次数、最大宽度并选择模式，即可自动生成希尔伯特曲线，生成完成后可自动计算电阻值
-   ![image](https://github.com/user-attachments/assets/f3017520-689f-4643-943d-82d2b16a05ae)
+   ![image-1](https://github.com/user-attachments/assets/f3017520-689f-4643-943d-82d2b16a05ae)
 
 4. 使用“铜线阻值计算器”功能，可以便捷计算线长或线宽
+   ![image-2](https://github.com/user-attachments/assets/9adfddb9-1e6c-473f-8a50-96a34c5e3e75)
+
 
 ## 文言脚本
 
