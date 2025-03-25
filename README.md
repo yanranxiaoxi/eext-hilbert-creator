@@ -20,7 +20,8 @@
    ![image-1](https://github.com/user-attachments/assets/f3017520-689f-4643-943d-82d2b16a05ae)
 
 4. 使用“铜线阻值计算器”功能，可以便捷计算线长或线宽
-   ![image-2](https://github.com/user-attachments/assets/9adfddb9-1e6c-473f-8a50-96a34c5e3e75)
+   ![image-2](https://github.com/user-attachments/assets/e5193a12-65b6-4848-8312-f6a5133cda18)
+
 
 
 ## 文言脚本
