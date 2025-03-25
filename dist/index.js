@@ -5,8 +5,8 @@ var edaEsbuildExportName = (() => {
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __export = (target, all) => {
-    for (var name2 in all)
-      __defProp(target, name2, { get: all[name2], enumerable: true });
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
   };
   var __copyProps = (to, from, except, desc) => {
     if (from && typeof from === "object" || typeof from === "function") {
@@ -28,15 +28,15 @@ var edaEsbuildExportName = (() => {
   });
 
   // extension.json
-  var name = "eext-hilbert-creator";
+  var displayName = "Hilbert Creator";
   var description = "Hilbert Creator - \u5E0C\u5C14\u4F2F\u7279\u66F2\u7EBF\u751F\u6210\u5668";
-  var version = "1.3.0";
+  var version = "1.3.1";
 
   // src/index.ts
   function activate(status, arg) {
   }
   function about() {
-    eda.sys_MessageBox.showInformationMessage(name + " " + version + "\n" + description, "\u5173\u4E8E");
+    eda.sys_Dialog.showInformationMessage(displayName + " " + version + "\n" + description + "\n Github: https://github.com/klxf/eext-hilbert-creator", "\u5173\u4E8E");
   }
   function openIframe() {
     eda.sys_IFrame.openIFrame("/iframe/index.html", 300, 600);

@@ -16,7 +16,15 @@ import * as extensionConfig from '../extension.json';
 export function activate(status?: 'onStartupFinished', arg?: string): void {}
 
 export function about(): void {
-	eda.sys_MessageBox.showInformationMessage(extensionConfig.name + ' ' + extensionConfig.version + '\n' + extensionConfig.description, '关于');
+	eda.sys_Dialog.showInformationMessage(
+		extensionConfig.displayName +
+			' ' +
+			extensionConfig.version +
+			'\n' +
+			extensionConfig.description +
+			'\n Github: https://github.com/klxf/eext-hilbert-creator',
+		'关于',
+	);
 }
 
 export function openIframe(): void {
